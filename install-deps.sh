@@ -5,7 +5,7 @@ pkg upgrade -y
 pkg i tsu python nano termux-api make libjpeg-turbo make git rust python-cryptography libcrypt libffi binutils mosquitto wget libsodium python-numpy -y
 
 dpkg -i ./contrib/ffmpeg_5.1.2-7_aarch64.deb
-apt install -f
+apt install -f -y
 
 python -m venv --without-pip hass
 source hass/bin/activate
@@ -16,6 +16,7 @@ pip install maturin
 pip install setuptools
 MATHLIB=m pip install aiohttp_cors==0.7.0
 MATHLIB=m pip install PyTurboJPEG==1.6.7
+CFLAGS=-Wno-implicit-function-declaration MATHLIB=m pip install numpy==1.23.2
 pip install git+https://github.com/amitdev/lru-dict@5013406c409a0a143a315146df388281bfb2172d
 
 SODIUM_INSTALL=system pip install pynacl
