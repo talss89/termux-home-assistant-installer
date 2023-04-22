@@ -114,8 +114,6 @@ do_install() {
 
   RUSTFLAGS="-C lto=n" CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')"  CRYPTOGRAPHY_DONT_BUILD_RUST=1 pip install homeassistant==2023.4.4
 
-  # Run `hass` in check config mode, purely to install dependencies, and then quit.
-  hass --script check_config
 }
 
 [[ ${#args[@]} -eq 0 ]] && usage && die;
@@ -123,11 +121,7 @@ do_install() {
 
 if [ "${args[0]}" == "install" ]; then
   do_install;
+  msg "$GREEN Installation complete. To start Home Assistant, run:"
+  msg "$BLUE source hass/bin/activate && hass -v $NOFORMAT"
+  msg "Remember, this may take a long time while 'hass' installs lazy dependencies. This will only happen at first boot."
 fi
-
-# script logic here
-msg "${args[0]}"
-msg "${RED}Read parameters:${NOFORMAT}"
-msg "- flag: ${flag}"
-msg "- param: ${param}"
-msg "- arguments: ${args[*]-}"
