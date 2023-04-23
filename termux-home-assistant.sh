@@ -84,7 +84,7 @@ do_install() {
   APT_INSTALL_FLAGS="--assume-yes"
   export DEBIAN_FRONTEND=noninteractive
 
-  cp "$script_dir/etc/apt/apt.conf.d/99-ha-unattended" "$PREFIX/etc/apt/apt.conf.d/99-ha-unattanded"
+  cp "$script_dir/etc/apt/apt.conf.d/99-ha-unattended" "$PREFIX/etc/apt/apt.conf.d/99-ha-unattended"
 
   pkg update $APT_INSTALL_FLAGS
   apt upgrade $APT_INSTALL_FLAGS
