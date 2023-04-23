@@ -7,7 +7,7 @@ A script to provision Home Assistant Core on an Android / Termux device. This is
 ## Quick Installer
 
 ```bash
-curl -s https://github.com/talss89/termux-home-assistant-installer/releases/download/v2023.4.4-alpha.2/remote-install.sh | bash
+curl -sL https://github.com/talss89/termux-home-assistant-installer/releases/download/v2023.4.4-alpha.2/remote-install.sh | bash
 ```
 
 Please be patient, this will take a while depending on your device specifications.
