@@ -4,6 +4,8 @@ A script to provision Home Assistant Core on an Android / Termux device. This is
 
 **Warning: This is pre-release quality, if this breaks your Termux installation, I am not responsible. Please try this on a fresh Termux installation that you're happy to dispose of if required.**
 
+**Note: This package currently supports `aarch64` devices only. If another architecture is important to you, please raise an issue and I will look into supporting.**
+
 ## Quick Installer
 
 ```bash
